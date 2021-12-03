@@ -6,9 +6,9 @@ from time import sleep
 import plotly.graph_objects as go
 import plotly.express as px
 
-api = krakenex.API()
-kraken = KrakenAPI(api)
-api.load_key('kraken_api_keys.txt')
+# api = krakenex.API()
+# kraken = KrakenAPI(api)
+#api.load_key('kraken_api_keys.txt')
 
 #
 # asset_info = kraken.get_asset_info()
@@ -49,4 +49,5 @@ api.load_key('kraken_api_keys.txt')
 #     print('Order completed sucessfully')
 # else:
 #     print('Order rejected')
+help(KrakenAPI)
 print('debug')
