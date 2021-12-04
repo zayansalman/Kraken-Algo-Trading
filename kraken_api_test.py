@@ -8,7 +8,7 @@ import plotly.express as px
 api = krakenex.API()
 kraken = KrakenAPI(api)
 
-#api.load_key('kraken_api_keys.txt')
+# api.load_key('kraken_api_keys.txt')
 
 
 def get_ticker_info(pair):
@@ -37,7 +37,7 @@ def get_order_book(pair, count=20):
     book = kraken.get_order_book(pair, count)
     pair_df = pd.merge(book[0], book[1], left_index=True, right_index=True)
     pair_df.rename({"price_x": "Bid Price", "volume_x": "Bid Amount", "time_x": "Bid Time", "price_y": "Ask Price",
-                            "volume_y": "Ask Amount", "time_y": "Ask Time"}, axis='columns')
+                    "volume_y": "Ask Amount", "time_y": "Ask Time"}, axis='columns')
     return pair_df
 
 
