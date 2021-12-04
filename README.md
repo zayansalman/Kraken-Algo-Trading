@@ -1,2 +1,2 @@
-# kraken_api
-kraken api test
+# Kraken Algo Trading
+Run strategies to trade crypto volality
