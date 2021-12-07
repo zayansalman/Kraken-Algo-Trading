@@ -19,7 +19,7 @@ def get_ticker_info(pair):
 def get_ohlc_data_in_chart(pair):
     ohlc_data = kraken.get_ohlc_data(pair, interval=1440, ascending=True)
     ohlc_data[0].head()
-    ohlc_data[0]['20 SMA'] = ohlc_data[0]['close'].rolling(20).mean()
+    ohlc_data[0]['20 SMA'] = ohlc_data[0]['close'].rolling(5).mean()
     ohlc_data[0].tail()
 
     fig = go.Figure(data=[go.Candlestick(x=ohlc_data[0].index,
@@ -57,6 +57,6 @@ if __name__ == '__main__':
     # asset_info = kraken.get_asset_info()
     # tradable_pairs_info = kraken.get_tradable_asset_pairs()
     # btcusd = get_ticker_info('BTCUSD')
-    # get_ohlc_data_in_chart('BTCUSD')
+    get_ohlc_data_in_chart('BTCUSD')
     # help(KrakenAPI)
     print('debug')
