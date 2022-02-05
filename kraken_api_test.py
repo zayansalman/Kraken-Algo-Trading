@@ -8,7 +8,7 @@ import plotly.express as px
 api = krakenex.API()
 kraken = KrakenAPI(api)
 
-# api.load_key('kraken_api_keys.txt')
+api.load_key('kraken_api_keys.txt')
 
 
 def get_ticker_info(pair):
@@ -41,10 +41,10 @@ def get_order_book(pair, count=20):
     return pair_df
 
 
-def send_market_order(pair, order_type, volume):
+def send_market_order(pair, position_type, order_type, volume):
     currency_price = float((kraken.get_ticker_information(pair))['a'][0][0])
     print(currency_price)
-    response = kraken.add_standard_order(pair=pair, type=order_type, ordertype='market', volume=volume, validate=False)
+    response = kraken.add_standard_order(pair=pair, type=position_type, ordertype=order_type, volume=volume, validate=False)
     sleep(3)
     check_order = kraken.query_orders_info(response['txid'][0])
     if check_order['status'][0] == 'open' or 'closed':
@@ -57,6 +57,7 @@ if __name__ == '__main__':
     # asset_info = kraken.get_asset_info()
     # tradable_pairs_info = kraken.get_tradable_asset_pairs()
     # btcusd = get_ticker_info('BTCUSD')
-    get_ohlc_data_in_chart('BTCUSD')
+    send_market_order('XRPGBP', 'buy', 'market', '5')
+    # get_ohlc_data_in_chart('BTCUSD')
     # help(KrakenAPI)
     print('debug')

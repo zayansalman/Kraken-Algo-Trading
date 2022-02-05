@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 # API Key
-.\kraken_api_keys.txt
+/kraken_api_keys.txt
+/metatrader_creds.txt
