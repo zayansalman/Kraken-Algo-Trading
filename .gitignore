@@ -131,3 +131,7 @@ dmypy.json
 # API Key
 /kraken_api_keys.txt
 /metatrader_creds.txt
+/jupyter_notebooks/three_candle.ipynb
+/jupyter_notebooks/mt5_setup.ipynb
+/jupyter_notebooks/bollinger_bands.ipynb
+/jupyter_notebooks/

@@ -57,7 +57,7 @@ if __name__ == '__main__':
     # asset_info = kraken.get_asset_info()
     # tradable_pairs_info = kraken.get_tradable_asset_pairs()
     # btcusd = get_ticker_info('BTCUSD')
-    send_market_order('XRPGBP', 'buy', 'market', '5')
+    # send_market_order('XRPGBP', 'buy', 'market', '5')
     # get_ohlc_data_in_chart('BTCUSD')
     # help(KrakenAPI)
     print('debug')
