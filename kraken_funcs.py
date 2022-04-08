@@ -3,17 +3,11 @@ import pandas as pd
 from pykrakenapi import KrakenAPI
 from time import sleep
 import plotly.graph_objects as go
-import plotly.express as px
 
 api = krakenex.API()
 kraken = KrakenAPI(api)
 
 api.load_key('kraken_api_keys.txt')
-
-
-def get_ticker_info(pair):
-    ticker = kraken.get_ticker_information(pair)
-    return ticker.T
 
 
 def get_ohlc_data_in_chart(pair):
@@ -54,10 +48,6 @@ def send_market_order(pair, position_type, order_type, volume):
 
 
 if __name__ == '__main__':
-    # asset_info = kraken.get_asset_info()
-    # tradable_pairs_info = kraken.get_tradable_asset_pairs()
-    # btcusd = get_ticker_info('BTCUSD')
-    # send_market_order('XRPGBP', 'buy', 'market', '5')
-    # get_ohlc_data_in_chart('BTCUSD')
+    get_ohlc_data_in_chart('BTCUSD')
     # help(KrakenAPI)
     print('debug')
